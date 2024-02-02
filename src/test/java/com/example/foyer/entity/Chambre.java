@@ -1,6 +1,5 @@
 package com.example.foyer.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,3 +30,4 @@ public class Chambre {
     Bloc bloc;
 
 }
+

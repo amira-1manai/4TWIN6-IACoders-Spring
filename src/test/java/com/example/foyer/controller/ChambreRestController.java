@@ -2,11 +2,13 @@ package com.example.foyer.controller;
 
 
 import com.example.foyer.entity.Chambre;
+import com.example.foyer.entity.TypeChambre;
+import com.example.foyer.service.chambre.ChambreServiceImpl;
+import com.example.foyer.service.chambre.IChambreService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.List;
 import java.util.List;
 
 @RestController

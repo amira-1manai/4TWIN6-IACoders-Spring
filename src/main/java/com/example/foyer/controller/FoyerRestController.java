@@ -1,6 +1,7 @@
 package com.example.foyer.controller;
 
 
+import com.example.foyer.entity.Foyer;
 import com.ey.springboot3security.entity.Foyer;
 import com.ey.springboot3security.service.foyer.IFoyerService;
 import lombok.AllArgsConstructor;

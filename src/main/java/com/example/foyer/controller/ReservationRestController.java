@@ -1,14 +1,13 @@
-package com.example.foyer.controller;
+package com.example.foyer.Controller;
 
-import com.example.foyer.entity.Reservation;
-import com.example.foyer.service.reservation.IReservationService;
+import com.ey.springboot3security.entity.Reservation;
+import com.ey.springboot3security.service.reservation.IReservationService;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @RestController

@@ -1,8 +1,12 @@
 package com.example.foyer.service.bloc;
 
 
-import com.ey.springboot3security.entity.Bloc;
-import com.ey.springboot3security.repository.BlockRepo;
+import com.example.foyer.entity.Bloc;
+import com.example.foyer.entity.Chambre;
+import com.example.foyer.entity.Foyer;
+import com.example.foyer.repository.BlockRepo;
+import com.example.foyer.repository.ChambreRepo;
+import com.example.foyer.repository.FoyerRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

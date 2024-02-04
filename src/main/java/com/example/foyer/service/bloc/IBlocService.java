@@ -1,6 +1,7 @@
 package com.example.foyer.service.bloc;
 
-import com.ey.springboot3security.entity.Bloc;
+import com.example.foyer.entity.Bloc;
+import com.example.foyer.entity.Chambre;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.example.foyer.repository;
 
-import com.ey.springboot3security.entity.Reservation;
+import com.example.foyer.entity.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +13,7 @@ public interface ReservationRepo extends JpaRepository<Reservation,String> {
 
     long countResvationByAnneUniversitaireBetween(Date debut , Date fin);
 
-    List<Reservation> findReservationByAnneUniversitaireBetween(Date debutAnnee,  Date finAnnee);
+    List<Reservation> findReservationByAnneUniversitaireBetween(Date debutAnnee, Date finAnnee);
 
     int countReservationByChambre_IdChambre(long idChambre);
 

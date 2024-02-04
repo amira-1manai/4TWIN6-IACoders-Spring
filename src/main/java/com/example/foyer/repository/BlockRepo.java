@@ -1,6 +1,7 @@
 package com.example.foyer.repository;
 
-import com.ey.springboot3security.entity.Bloc;
+import com.example.foyer.entity.Bloc;
+import com.example.foyer.entity.Chambre;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

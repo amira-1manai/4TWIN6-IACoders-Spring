@@ -1,8 +1,9 @@
-package com.example.foyer.controller;
+package com.example.foyer.Controller;
 
 
-import com.ey.springboot3security.entity.Bloc;
-import com.ey.springboot3security.service.bloc.IBlocService;
+import com.example.foyer.entity.Bloc;
+import com.example.foyer.entity.Chambre;
+import com.example.foyer.service.bloc.IBlocService;
 import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

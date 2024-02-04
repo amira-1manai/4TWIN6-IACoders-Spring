@@ -1,6 +1,8 @@
 package com.example.foyer.service.University;
 
+import com.example.foyer.entity.Foyer;
 import com.example.foyer.entity.Universite;
+import com.example.foyer.repository.FoyerRepo;
 import com.example.foyer.repository.UniversiteRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

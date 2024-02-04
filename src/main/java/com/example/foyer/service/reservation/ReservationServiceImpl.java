@@ -1,8 +1,12 @@
 package com.example.foyer.service.reservation;
 
 
-import com.ey.springboot3security.entity.Reservation;
-import com.ey.springboot3security.repository.ReservationRepo;
+import com.example.foyer.entity.Chambre;
+import com.example.foyer.entity.Etudiant;
+import com.example.foyer.entity.Reservation;
+import com.example.foyer.repository.ChambreRepo;
+import com.example.foyer.repository.EtudiantRepository;
+import com.example.foyer.repository.ReservationRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

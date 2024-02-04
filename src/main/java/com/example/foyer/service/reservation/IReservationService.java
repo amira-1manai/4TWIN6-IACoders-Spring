@@ -1,11 +1,10 @@
 package com.example.foyer.service.reservation;
 
 
-import com.ey.springboot3security.entity.Reservation;
+import com.example.foyer.entity.Reservation;
 import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public interface IReservationService {

@@ -1,5 +1,6 @@
 package com.example.foyer.service.chambre;
 
+
 import com.example.foyer.entity.Chambre;
 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public interface IChambreService {
     Chambre retrievechambres (Long idChambre);
     void removeChambre(Long idChambre);
 
-    List<Chambre> getNomchambrebybloc(String nom);
+List<Chambre> getNomchambrebybloc(String nom);
     List<Chambre> getChambreByReservationAnneeUniversitaire(LocalDate debut, LocalDate fin) ;
 
     List<Chambre> getChambresByIdBloc(Long idBloc);

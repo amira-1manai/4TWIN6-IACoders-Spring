@@ -1,13 +1,12 @@
 package com.example.foyer.controller;
 
 
-import com.example.foyer.entity.Chambre;
-import com.example.foyer.entity.TypeChambre;
 import com.example.foyer.service.chambre.ChambreServiceImpl;
 import com.example.foyer.service.chambre.IChambreService;
+import com.example.foyer.entity.Chambre;
+import com.example.foyer.entity.TypeChambre;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.List;
 
@@ -21,14 +20,14 @@ public class ChambreRestController {
 
 
 
-    @RequestMapping(method = RequestMethod.GET , value = "/affichetoutchambres")
+@RequestMapping(method = RequestMethod.GET , value = "/affichetoutchambres")
     List<Chambre> retrieveAllchambres(){
         return iChambreService.retrieveAllchambres();
     }
 
     @PostMapping("/ajouterchambre")
     Chambre addchambres (@RequestBody Chambre c){
-        return iChambreService.addchambres(c);
+      return iChambreService.addchambres(c);
     }
 
     @PutMapping("/modifierchambre")
@@ -58,14 +57,14 @@ public class ChambreRestController {
 
     @GetMapping("/getbynombloc/{nom}")
     public List<Chambre> getChambrebyNombloc(@PathVariable("nom") String nom){
-        return iChambreService.getNomchambrebybloc(nom);
-    }
+    return iChambreService.getNomchambrebybloc(nom);
+}
 
 
-    @GetMapping("/getnbchhambreparblocetype/{typec}/{idBloc}")
+@GetMapping("/getnbchhambreparblocetype/{typec}/{idBloc}")
     public long getnbchambreparblocetype(@PathVariable("typec") TypeChambre typec, @PathVariable("idBloc") long idBloc){
-        return chamb.countchambrepartypeetbloc(typec,idBloc);
-    }
+    return chamb.countchambrepartypeetbloc(typec,idBloc);
+}
 
 
 }

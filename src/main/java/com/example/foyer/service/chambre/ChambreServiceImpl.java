@@ -2,6 +2,7 @@ package com.example.foyer.service.chambre;
 
 
 import com.example.foyer.entity.Chambre;
+import com.example.foyer.entity.Reservation;
 import com.example.foyer.entity.TypeChambre;
 import com.example.foyer.repository.ChambreRepo;
 import lombok.AllArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class ChambreServiceImpl  implements IChambreService {
+public class ChambreServiceImpl implements IChambreService {
     ChambreRepo chambreRepo;
 
     @Override
@@ -48,12 +49,12 @@ public class ChambreServiceImpl  implements IChambreService {
     @Override
     public List<Chambre> getChambreByReservationAnneeUniversitaire(LocalDate debut, LocalDate fin) {
         List<Chambre> chambres = null;
-        for (Chambre c : chambreRepo.findAll())
-            for (Reservation r : c.getReservations())
-                if (r.getAnneUniversitaire().isAfter(debut) && r.getAnneUniversitaire().isBefore(fin))
-                    chambres.add(c);
-        return chambres;
-    }
+            for (Chambre c : chambreRepo.findAll())
+                for (Reservation r : c.getReservations())
+                    if (r.getAnneUniversitaire().isAfter(debut) && r.getAnneUniversitaire().isBefore(fin))
+                        chambres.add(c);
+            return chambres;
+        }
 
     @Override
     public List<Chambre> getChambresByIdBloc(Long idBloc) {

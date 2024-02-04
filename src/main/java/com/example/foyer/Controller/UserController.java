@@ -1,8 +1,8 @@
 package com.example.foyer.controller;
 
-import com.example.foyer.entity.Admin;
 import com.example.foyer.entity.Etudiant;
 import com.example.foyer.entity.User;
+import com.example.foyer.entity.Admin;
 import com.example.foyer.service.user.AdminService;
 import com.example.foyer.service.user.EtudiantService;
 import com.example.foyer.service.user.JwtService;
@@ -17,6 +17,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.Base64;
 import java.util.HashMap;

@@ -1,4 +1,5 @@
-package com.example.foyer.service.University;
+package com.example.foyer.service.universite;
+
 
 import com.example.foyer.entity.Foyer;
 import com.example.foyer.entity.Universite;
@@ -11,7 +12,9 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class UniversiteService {
+
+public class UniversiteServiceImpl implements IUniversiteService {
+
     UniversiteRepo universiterepo;
     FoyerRepo foyerrepo;
 
@@ -72,5 +75,6 @@ public class UniversiteService {
     public Universite getUnivByid(long idUniversite) {
         return universiterepo.findUniversiteByIdUniversite(idUniversite);
     }
+
 
 }

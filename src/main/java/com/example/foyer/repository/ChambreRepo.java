@@ -15,17 +15,17 @@ public interface ChambreRepo extends JpaRepository<Chambre,Long> {
 
 
 
-    List<Chambre> findChambreByBloc_NomBloc(String nom);
+      List<Chambre> findChambreByBloc_NomBloc(String nom);
 
-    Chambre findChambreByNumeroChambre(long numeroChambre);
-    //recupere les chambres définis par leur nom
+      Chambre findChambreByNumeroChambre(long numeroChambre);
+        //recupere les chambres définis par leur nom
     //List<Chambre> findChambresByBloc_nomBloc();
 
 
-    // int countByTypecAndBloc_IdBloc(TypeChambre typeChambre,long id);
-    @Query("SELECT COUNT(c) FROM Chambre c WHERE c.Typec = :type AND c.bloc.idBloc = :idBloc")
-    long countByTypecAndBloc_IdBloc(@Param("type") TypeChambre type, @Param("idBloc") long idBloc);
+     // int countByTypecAndBloc_IdBloc(TypeChambre typeChambre,long id);
+     @Query("SELECT COUNT(c) FROM Chambre c WHERE c.Typec = :type AND c.bloc.idBloc = :idBloc")
+     long countByTypecAndBloc_IdBloc(@Param("type") TypeChambre type, @Param("idBloc") long idBloc);
 
-    List<Chambre> findChambresByBloc_IdBloc(Long idBloc);
+     List<Chambre> findChambresByBloc_IdBloc(Long idBloc);
 
 }

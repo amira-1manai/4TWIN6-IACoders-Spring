@@ -13,7 +13,7 @@ public interface ReservationRepo extends JpaRepository<Reservation,String> {
 
     long countResvationByAnneUniversitaireBetween(Date debut , Date fin);
 
-    List<Reservation> findReservationByAnneUniversitaireBetween(Date debutAnnee, Date finAnnee);
+    List<Reservation> findReservationByAnneUniversitaireBetween(Date debutAnnee,  Date finAnnee);
 
     int countReservationByChambre_IdChambre(long idChambre);
 

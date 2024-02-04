@@ -1,7 +1,7 @@
-package com.example.foyer.Controller;
+package com.example.foyer.controller;
 
-import com.ey.springboot3security.entity.Reservation;
-import com.ey.springboot3security.service.reservation.IReservationService;
+import com.example.foyer.service.reservation.IReservationService;
+import com.example.foyer.entity.Reservation;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;

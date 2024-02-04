@@ -9,26 +9,27 @@ import lombok.Setter;
 
 import java.util.Set;
 
-@Getter
+@Entity
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
+public class Bloc {
 
-@Entity
-public class Foyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFoyer;
-    String nomFoyer;
-    long capacite;
-    //// modification rating //
+    private Long idBloc;
 
-    long likes;
+    String nomBloc;
+    long capaciteBloc;
+
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bloc", fetch = FetchType.EAGER)
+    Set<Chambre> chambres;
+
+
     @JsonIgnore
-    @OneToOne(mappedBy = "foyer")
-    Universite universite;
-
-    @OneToMany(mappedBy = "foyer")
-    Set<Bloc> blocs;
+    @ManyToOne
+    Foyer foyer;
 
 }

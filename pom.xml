@@ -124,6 +124,11 @@
 
 	</dependencies>
 
+	<distributionManagement>
+		<id>deploymentRepo</id>
+		<url>http://192.168.229.128:8081/repository/maven-releases/</url>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>

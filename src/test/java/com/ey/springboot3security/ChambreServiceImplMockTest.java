@@ -100,15 +100,14 @@ public class ChambreServiceImplMockTest {
     public void testDeleteChambre() {
         Long id = 1L;
         Chambre chambre = new Chambre();
-        chambre.setId(id);
+        chambre.setIdChambre(id);  // Utilisez setIdChambre au lieu de setId
 
         when(chambreRepo.findById(id)).thenReturn(Optional.of(chambre));
 
         chambreService.deleteChambre(id);
 
-        verify(chambreRepo, times(1)).delete(chambre);
+        verify(chambreRepo, times(1)).deleteById(id);  // Utilisez deleteById au lieu de delete(chambre)
     }
-
     @Test
     public void testCalculatePourcentage() {
         int totalChambres = 10;

@@ -1,0 +1,14 @@
+
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(î¬”¤
+_
+java:S2259-"KA "NullPointerException" could be thrown; "existingFoyer" is nullable here.(å®
+d
+java:S2259•"HA "NullPointerException" could be thrown; "universite" is nullable here.(§­ÅËûÿÿÿÿ
+k
+java:S3655]"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(û¶¨Íûÿÿÿÿ
+g
+java:S3655€"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ß‰²À
+C
+java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX
+E
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ

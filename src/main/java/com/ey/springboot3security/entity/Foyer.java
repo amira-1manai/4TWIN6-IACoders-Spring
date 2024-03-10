@@ -32,4 +32,7 @@ public class Foyer implements Serializable {
     @Lob
     @Column(columnDefinition = "MEDIUMBLOB")
     private byte[] imageData;
+
+    public void setId(Long id) {
+    }
 }

@@ -2,6 +2,7 @@ package com.ey.springboot3security;
 
 import com.ey.springboot3security.entity.Bloc;
 import com.ey.springboot3security.entity.Foyer;
+import com.ey.springboot3security.entity.Universite;
 import com.ey.springboot3security.repository.BlocRepo;
 import com.ey.springboot3security.repository.FoyerRepo;
 import com.ey.springboot3security.repository.UniversiteRepo;
@@ -18,8 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
@@ -138,5 +138,89 @@ public class foyerServiceImplTest {
         verify(foyerRepository, times(1)).findByBloc(bloc);
     }
 
+
+
+    @Test
+    void testAjoutFoyerEtBloc() {
+        Foyer foyer = new Foyer();
+        Bloc bloc1 = new Bloc();
+        Bloc bloc2 = new Bloc();
+        foyer.setBloc(Arrays.asList(bloc1, bloc2));
+
+        when(foyerRepository.save(foyer)).thenReturn(foyer);
+
+        Foyer result = foyerService.ajoutFoyerEtBloc(foyer);
+
+        assertNotNull(result);
+        assertEquals(foyer, result);
+        verify(foyerRepository, times(1)).save(foyer);
+        verify(blocRepository, times(2)).save(any(Bloc.class));
+    }
+
+
+
+    @Test
+    void testAffecterFoyerAUniversite() {
+        long idFoyer = 1L;
+        String nomUniversite = "Universite A";
+        Foyer foyer = new Foyer();
+        Universite universite = new Universite();
+
+        when(foyerRepository.findById(idFoyer)).thenReturn(Optional.of(foyer));
+        when(universiteRepository.findByNomUniversite(nomUniversite)).thenReturn(Arrays.asList(universite));
+
+        Universite result = foyerService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+
+        assertNotNull(result);
+        assertEquals(universite, result);
+        assertEquals(foyer, universite.getFoyer());
+        verify(foyerRepository, times(1)).findById(idFoyer);
+        verify(universiteRepository, times(1)).findByNomUniversite(nomUniversite);
+        verify(universiteRepository, times(1)).save(universite);
+    }
+
+    @Test
+    void testDesaffecterFoyerAUniversite() {
+        long idUniversite = 1L;
+        Universite universite = new Universite();
+        universite.setFoyer(new Foyer());
+
+        when(universiteRepository.findById(idUniversite)).thenReturn(Optional.of(universite));
+        when(universiteRepository.save(universite)).thenReturn(universite);
+
+        Universite result = foyerService.desaffecterFoyerAUniversite(idUniversite);
+
+        assertNotNull(result);
+        assertNull(result.getFoyer());
+        verify(universiteRepository, times(1)).findById(idUniversite);
+        verify(universiteRepository, times(1)).save(universite);
+    }
+
+
+
+
+    @Test
+    void testDeleteFoyerAndDesaffecterUniversite() {
+        Long id = 1L;
+        Foyer foyer = new Foyer();
+        Universite universite = new Universite();
+        Bloc bloc1 = new Bloc();
+        Bloc bloc2 = new Bloc();
+
+        foyer.setId(id);
+        foyer.setUniversite(universite);
+        foyer.setBloc(Arrays.asList(bloc1, bloc2));
+
+        when(foyerRepository.findById(id)).thenReturn(Optional.of(foyer));
+
+        foyerService.deleteFoyerAndDesaffecterUniversite(id);
+
+        assertNull(universite.getFoyer());
+        verify(blocRepository, times(2)).save(any(Bloc.class));
+        verify(universiteRepository, times(1)).save(universite);
+        verify(foyerRepository, times(1)).deleteById(id);
+    }
+
+   
 
 }

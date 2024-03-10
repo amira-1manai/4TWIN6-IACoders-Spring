@@ -17,11 +17,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(SpringExtension.class)
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 public class ChambreServiceImplMockTest {
@@ -62,5 +64,64 @@ public class ChambreServiceImplMockTest {
 
         assertEquals(chambres, savedChambres);
         verify(chambreRepo, times(1)).saveAll(chambres);
+    }
+
+    @Test
+    public void testGetChambreById() {
+        Long id = 1L;
+        Chambre chambre = new Chambre();
+        chambre.setId(id);
+
+        when(chambreRepo.findById(id)).thenReturn(Optional.of(chambre));
+
+        Optional<Chambre> retrievedChambre = chambreService.getChambreById(id);
+
+        assertTrue(retrievedChambre.isPresent());
+        assertEquals(chambre, retrievedChambre.get());
+        verify(chambreRepo, times(1)).findById(id);
+    }
+
+    @Test
+    public void testGetAllChambres() {
+        List<Chambre> chambres = new ArrayList<>();
+        chambres.add(new Chambre());
+        chambres.add(new Chambre());
+
+        when(chambreRepo.findAll()).thenReturn(chambres);
+
+        List<Chambre> retrievedChambres = chambreService.getAllChambres();
+
+        assertEquals(chambres.size(), retrievedChambres.size());
+        assertEquals(chambres, retrievedChambres);
+        verify(chambreRepo, times(1)).findAll();
+    }
+
+    @Test
+    public void testDeleteChambre() {
+        Long id = 1L;
+        Chambre chambre = new Chambre();
+        chambre.setId(id);
+
+        when(chambreRepo.findById(id)).thenReturn(Optional.of(chambre));
+
+        chambreService.deleteChambre(id);
+
+        verify(chambreRepo, times(1)).delete(chambre);
+    }
+
+    @Test
+    public void testCalculatePourcentage() {
+        int totalChambres = 10;
+        int chambresOccupees = 7;
+        double expectedPourcentage = (double) chambresOccupees / totalChambres * 100;
+
+        when(chambreRepo.count()).thenReturn((long) totalChambres);
+        when(chambreRepo.countByOccupied(true)).thenReturn(chambresOccupees);
+
+        double calculatedPourcentage = chambreService.calculatePourcentageOccupation();
+
+        assertEquals(expectedPourcentage, calculatedPourcentage, 0.01);
+        verify(chambreRepo, times(1)).count();
+        verify(chambreRepo, times(1)).countByOccupied(true);
     }
 }

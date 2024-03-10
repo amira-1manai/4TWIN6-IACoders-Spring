@@ -39,4 +39,5 @@ public interface ChambreRepo extends JpaRepository<Chambre,Long> {
     List<Chambre> findChambreByBlocFoyerNomFoyerAndTypeChambreAndReservations_Empty(String NomFoyer , TypeChambre type);
     List<Chambre> findByBloc_NomBloc(String nomBloc);
 
+    Object countByOccupied(boolean b);
 }

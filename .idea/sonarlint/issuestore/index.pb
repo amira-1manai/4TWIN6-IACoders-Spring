@@ -11,3 +11,9 @@ l
 <src/main/java/com/ey/springboot3security/entity/Chambre.java,b\7\b79b7ad677c5515ec473ba7fc54c6fb33fff24a5
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+i
+9src/main/java/com/ey/springboot3security/entity/Bloc.java,c\9\c9c10c08452b4b5ac776ba50a89fa833cde086bd
+t
+Dsrc/main/java/com/ey/springboot3security/repository/ChambreRepo.java,b\0\b09dab8595ef46f1afccb2443880349034884c02
+Y
+)src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284

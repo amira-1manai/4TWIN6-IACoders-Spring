@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -145,4 +146,33 @@ public class ChambreServiceImpl implements IChambreService {
         return chambreRepository.findByBloc_NomBloc(nomBloc);
     }
 
+    public Optional<Chambre> getChambreById(Long id) {
+
+        return chambreRepository.findById(id);}
+
+    public List<Chambre> getAllChambres() {
+        return chambreRepository.findAll();
+    }
+
+    public void deleteChambre(Long id) {
+        chambreRepository.deleteById(id);
+    }
+
+    public double calculatePourcentageOccupation() {
+        String[] TypeChambre = new String[3];
+        int nbSimple = chambreRepository.countChambreByTypeChambre(com.ey.springboot3security.entity.TypeChambre.SIMPLE);
+        int nbDoube = chambreRepository.countChambreByTypeChambre(com.ey.springboot3security.entity.TypeChambre.DOUBLE);
+        int nbTriple = chambreRepository.countChambreByTypeChambre(com.ey.springboot3security.entity.TypeChambre.TRIPLE);
+        long nbChambres = chambreRepository.count();
+
+        String message = String.format("Nombre Total des chambres : %d", nbChambres);
+        String msg1 = String.format("Le pourcentage des chambres pour le type Simple est égal à %.2f%%", ((double) nbSimple / nbChambres * 100));
+        String msg2 = String.format("Le pourcentage des chambres pour le type Double est égal à %.2f%%", ((double) nbDoube / nbChambres * 100));
+        String msg3 = String.format("Le pourcentage des chambres pour le type Triple est égal à %.2f%%", ((double) nbTriple / nbChambres * 100));
+        System.out.println(message);
+        System.out.println(msg1);
+        System.out.println(msg2);
+        System.out.println(msg3);
+        return 0;
+    }
 }

@@ -59,7 +59,7 @@ public class ChambreServiceImplTest {
     @Test
     public void testAddChambres() {
         List<Chambre> chambres = new ArrayList<>();
-        // Add test data to the chambres list
+        // Ajoutez des données de test à la liste des chambres
 
         when(chambreRepository.saveAll(chambres)).thenReturn(chambres);
 
@@ -68,10 +68,4 @@ public class ChambreServiceImplTest {
         assertEquals(chambres, result);
         verify(chambreRepository, times(1)).saveAll(chambres);
     }
-
-
-
 }
-
-
-

@@ -18,17 +18,31 @@ public class Chambre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idChambre;
+
     @Column(unique = true)
     private long numeroChambre;
+
     @Enumerated(EnumType.STRING)
     private TypeChambre typeChambre;
+
     @ManyToOne
     @JsonIgnore
     private Bloc bloc;
+
     @JsonIgnore
     @OneToMany(mappedBy = "chambre")
     private Set<Reservation> reservations;
 
+    private boolean occupied;
 
+    public boolean isOccupied() {
+        return occupied;
+    }
 
+    public void setOccupied(boolean occupied) {
+        this.occupied = occupied;
+    }
+
+    public void setId(Long id) {
+    }
 }

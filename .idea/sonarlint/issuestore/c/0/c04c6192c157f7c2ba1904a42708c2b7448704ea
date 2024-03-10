@@ -1,0 +1,28 @@
+
+k	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å€¸ûÿÿÿÿ
+o
+java:S1488V"YImmediately return this expression instead of assigning it to the temporary variable "c".(É½«ˆ
+f
+java:S3655-"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(™ÒøÕ
+k
+java:S3655U"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(É¥”¥şÿÿÿÿ
+œ
+java:S11867"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¿‰±ôüÿÿÿÿ
+P
+java:S1854U"5Remove this useless assignment to local variable "b".(É¥”¥şÿÿÿÿ
+A
+java:S1481U"&Remove this unused "b" local variable.(É¥”¥şÿÿÿÿ
+Z
+java:S1854["?Remove this useless assignment to local variable "TypeChambre".(Å€¸ûÿÿÿÿ
+K
+java:S1481["0Remove this unused "TypeChambre" local variable.(Å€¸ûÿÿÿÿ
+E	java:S106e"+Replace this use of System.out by a logger.(øºÑûúÿÿÿÿ
+?	java:S106f"+Replace this use of System.out by a logger.(í¬ên
+E	java:S106g"+Replace this use of System.out by a logger.(•¦ºÅùÿÿÿÿ
+@	java:S106h"+Replace this use of System.out by a logger.(¤´ïÌ
+E	java:S106s"+Replace this use of System.out by a logger.(¦Âçˆùÿÿÿÿ
+@	java:S106w"+Replace this use of System.out by a logger.(Òçö
+e
+java:S1128"JRemove this unused import 'com.ey.springboot3security.entity.Reservation'.(¹¹‰Äûÿÿÿÿ
+K
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ

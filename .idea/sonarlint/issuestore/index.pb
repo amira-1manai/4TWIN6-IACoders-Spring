@@ -11,3 +11,5 @@ Isrc/main/java/com/ey/springboot3security/service/foyer/IFoyerService.java,2\b\
 Lsrc/main/java/com/ey/springboot3security/Springboot3SecurityApplication.java,8\9\891f54b24b45a072ab1d460942694b0e561206d4
 j
 :src/main/java/com/ey/springboot3security/entity/Foyer.java,d\0\d0101e48a8e5e8f303382390e93c43959bdb9b41
+r
+Bsrc/test/java/com/ey/springboot3security/foyerServiceMockTest.java,0\b\0b3043efdf4ec2b2dfbdf15ac2ba759b2ae06669

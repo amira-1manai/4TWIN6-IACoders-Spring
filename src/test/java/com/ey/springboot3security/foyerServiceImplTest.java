@@ -221,6 +221,6 @@ public class foyerServiceImplTest {
         verify(foyerRepository, times(1)).deleteById(id);
     }
 
-   
+
 
 }

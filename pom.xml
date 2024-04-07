@@ -132,6 +132,10 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
+		<finalName>
+			4TWIN6-AICoders-Foyer
+		</finalName>
 	</build>
 
 </project>

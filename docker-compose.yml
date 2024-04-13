@@ -1,8 +1,0 @@
-#docker-compose.yml
-version:'2'
-services:
-image-node:
-image: node:12
-working_dir: /app
-ports:
--'8080:8081'

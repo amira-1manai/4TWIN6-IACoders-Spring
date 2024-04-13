@@ -136,5 +136,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+ <id>deploymentRepo</id>
+ <url>http://<@ip>:8081/repository/maven-releases/</url>
+</distributionManagement>
+
 
 </project>

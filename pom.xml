@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ey</groupId>
-	<artifactId>springboot3-security</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot3-security</name>
-	<description>springboot3-security</description>
+	<artifactId>4TWIN6-IACoders-Spring</artifactId>
+	<version>0.0.1</version>
+	<name>4TWIN6-IACoders-Spring</name>
+	<description>4TWIN6-IACoders-Spring</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -144,5 +144,17 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>deploymentRepo</id>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+		<!-- Ajouter cette configuration pour permettre les déploiements de snapshots -->
+		<snapshotRepository>
+			<id>deploymentRepo</id>
+			<url>http://localhost:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>

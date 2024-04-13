@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ey</groupId>
-	<artifactId>springboot3-security</artifactId>
+	<artifactId>4TWIN6-IACoders-Spring</artifactId>
 	<version>0.0.1</version>
-	<name>springboot3-security</name>
-	<description>springboot3-security</description>
+	<name>4TWIN6-IACoders-Spring</name>
+	<description>4TWIN6-IACoders-Spring</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

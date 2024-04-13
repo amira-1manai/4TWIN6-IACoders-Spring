@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ey</groupId>
 	<artifactId>springboot3-security</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>springboot3-security</name>
 	<description>springboot3-security</description>
 	<properties>
@@ -136,6 +136,21 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	
+	 <distributionManagement>
+		<repository>
+			<id>deploymentRepo</id>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+		<!-- Ajouter cette configuration pour permettre les déploiements de snapshots -->
+		<snapshotRepository>
+			<id>deploymentRepo</id>
+			<url>http://localhost:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	
 
 

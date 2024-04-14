@@ -2,6 +2,9 @@ package com.ey.springboot3security.controller;
 
 
 import com.ey.springboot3security.entity.Etudiant;
+import com.ey.springboot3security.entity.TypeChambre;
+import com.ey.springboot3security.service.chambre.ChambreServiceImpl;
+import com.ey.springboot3security.service.user.EtudiantService;
 
 import com.ey.springboot3security.service.user.IEtudiantService;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,7 @@
 package com.ey.springboot3security.service.user;
 
 import com.ey.springboot3security.entity.Etudiant;
+import com.ey.springboot3security.entity.Reservation;
 import com.ey.springboot3security.entity.User;
 import com.ey.springboot3security.repository.EtudiantRepository;
 import com.ey.springboot3security.repository.UserInfoRepository;

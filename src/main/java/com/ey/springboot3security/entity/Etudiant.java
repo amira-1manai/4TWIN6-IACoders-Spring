@@ -29,9 +29,9 @@ public class Etudiant {
     private int codePostal;
     private String specialite;
 
-    //@JsonIgnore
-    //@OneToMany(mappedBy = "etudiant", cascade = CascadeType.ALL)
-    //List<Reservation> reservations;
+    @JsonIgnore
+    @OneToMany(mappedBy = "etudiant", cascade = CascadeType.ALL)
+    List<Reservation> reservations;
 
     @OneToOne(cascade = CascadeType.ALL)
     User user;

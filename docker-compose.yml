@@ -14,7 +14,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: amiraDevops/Amira-Manai-Chambre
+    image: amiradevops/Amira-Manai-Chambre
     restart: on-failure
     ports:
       - 8181:8181

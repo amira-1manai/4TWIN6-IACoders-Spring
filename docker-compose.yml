@@ -11,6 +11,15 @@ services:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql
+
+  appfront:
+    build: .
+    image: medmokhtarhadded/mohamedmokhtar-hadded-front
+    restart: on-failure
+    container_name: frontcont
+    ports:
+      - 4200:4200
+      
   app:
     depends_on:
       - mysqldb

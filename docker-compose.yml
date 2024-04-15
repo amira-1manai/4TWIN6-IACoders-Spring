@@ -14,7 +14,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: ichrakBchalladia/Ichrak-BenChalladia-Foyer
+    image: ichrakchalladia/Ichrak-BenChalladia-Foyer
     restart: on-failure
     ports:
       - 8181:8181

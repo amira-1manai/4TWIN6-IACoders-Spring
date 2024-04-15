@@ -1,4 +1,4 @@
 - job_name: jenkins
  metrics_path: /prometheus
  static_configs:
- - targets: [‘192.168.50.4:8080']
+ - targets: ['192.168.50.4:8080']

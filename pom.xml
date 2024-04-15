@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ey</groupId>
 	<artifactId>4TWIN6-IACoders-Spring</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.5</version>
 	<name>4TWIN6-IACoders-Spring</name>
 	<description>4TWIN6-IACoders-Spring</description>
 	<properties>
